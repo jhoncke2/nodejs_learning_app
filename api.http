@@ -1,0 +1,33 @@
+### Recuperar todos los libros
+GET http://localhost:1234/books
+
+### Recuperar un libro por id
+GET http://localhost:1234/books/65
+
+### Recuperar todos los libros por un género
+GET http://localhost:1234/books?genre=NovelA&year=2003
+
+### Crear un libro
+POST http://localhost:1234/books
+Content-Type: application/json
+
+{
+    "name": "Programación para dummies",
+    "author": "Frank Solo",
+    "genres": [
+        "Cristianismo",
+        "ciencia",
+        "filosofía"
+    ],
+    "description": "¿Es la ciencia contraria al cristianismo? Pues bien, en este libro se exploran las similitudes que hay entre la existencia de DIOS y la forma en que funciona la mecánica cuántica",
+    "year": 2025
+}
+
+### Actualizar una película
+PATCH http://localhost:1234/books/13
+Content-Type: application/json
+
+{
+    "year": 2009,
+    "description": "Esta es otra descripción del libro"
+}
