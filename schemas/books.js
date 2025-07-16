@@ -1,4 +1,4 @@
-const z = require('zod')
+import z from 'zod'
 
 const bookSchema = z.object({
     name: z.string({
@@ -23,17 +23,11 @@ const bookSchema = z.object({
     year: z.number().int().min(1850).max(2026)
 })
 
-function validateBook(object) {
+export function validateBook(object) {
     return bookSchema.safeParse(object)
 }
 
-function validatePartialBook(object) {
+export function validatePartialBook(object) {
     //Toma todos los campos como opcionales. Valida solamente los que están
     return bookSchema.partial().safeParse(object)
-}
-
-
-module.exports = {
-    validateBook,
-    validatePartialBook
 }

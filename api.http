@@ -4,7 +4,7 @@ GET http://localhost:1234/books
 ### Recuperar un libro por id
 GET http://localhost:1234/books/65
 
-### Recuperar todos los libros por un género
+### Recuperar todos los libros por género y año
 GET http://localhost:1234/books?genre=NovelA&year=2003
 
 ### Crear un libro
@@ -23,7 +23,7 @@ Content-Type: application/json
     "year": 2025
 }
 
-### Actualizar una película
+### Actualizar un libro
 PATCH http://localhost:1234/books/13
 Content-Type: application/json
 
@@ -31,3 +31,7 @@ Content-Type: application/json
     "year": 2009,
     "description": "Esta es otra descripción del libro"
 }
+
+### Eliminar un libro
+DELETE http://localhost:1234/books/61770f85-1583-4d1f-b361-f1a2aba26da5
+Content-Type: application/json
