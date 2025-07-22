@@ -4,21 +4,13 @@ import { randomUUID } from 'crypto'
 
 
 export class BookModel {
-    config = {
-        host: 'localhost',
-        user: 'root',
-        database: 'booksdb',
-        password: 'tEIfCdFygDjVoYRxlYLdiduaqqYJwQHD',
-        port: 3306
-    }
-    
     constructor({config}){
         this.config = config
         this.init()
     }
 
     async init(){
-        this.connection = await mysql.createConnection(config)
+        this.connection = await mysql.createConnection(this.config)
         await connection.query('SET autocommit = 1');
     }
 
