@@ -33,5 +33,5 @@ Content-Type: application/json
 }
 
 ### Eliminar un libro
-DELETE http://localhost:1234/books/117ef7c1-b9da-4ec1-a16c-a40b7c9849bc
+DELETE http://localhost:1234/books/5ff3a438-ebbe-4370-9436-7eea45bc8034
 Content-Type: application/json

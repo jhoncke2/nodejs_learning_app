@@ -156,14 +156,16 @@ export class BookModel {
 
     delete = async ({id}) => {
         try{
-            const [result, secondVar] = await this.connection.query(
+            const [result] = await this.connection.query(
                 `DELETE FROM books
                 WHERE BIN_TO_UUID(id) = ?
                 `,
                 [id]
             )
+            console.log(`********err:\n${result}`)
             return result['affectedRows'] == 1
         }catch(err){
+            console.log(`********err:\n${JSON.stringify(err)}`)
             return false
         }
     }
