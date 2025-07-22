@@ -1,8 +1,6 @@
 import mysql from 'mysql2/promise'
 import { randomUUID } from 'crypto'
 
-
-
 export class BookModel {
     constructor({config}){
         this.config = config
