@@ -11,12 +11,12 @@ export class BookModel {
         console.log('***************** config')
         console.log(JSON.stringify(this.config))
         this.connection = await mysql.createConnection(this.config)
-        await connection.query('SET autocommit = 1');
+        await this.connection.query('SET autocommit = 1');
     }
 
     getAll = async ({genre, year}) => {
         genre = (genre != undefined)? genre.toLowerCase(): genre
-        const [books] = await connection.query(
+        const [books] = await this.connection.query(
             `SELECT
                 BIN_TO_UUID(b.id) id,
                 b.name,
@@ -55,7 +55,7 @@ export class BookModel {
     }
 
     getById = async ({ id }) => {
-        const [books] = await connection.query(
+        const [books] = await this.connection.query(
             `SELECT
                 BIN_TO_UUID(b.id) id,
                 b.name,
@@ -87,8 +87,8 @@ export class BookModel {
                 year
             } = input
             const uuid = randomUUID()
-            await connection.beginTransaction()
-            const result = await connection.query(
+            await this.connection.beginTransaction()
+            const result = await this.connection.query(
                 `INSERT INTO books(id, name, author, description, year)
                     VALUES (UUID_TO_BIN('${uuid}'), ?, ?, ?, ?)
                 `,
@@ -96,33 +96,30 @@ export class BookModel {
             )
             for(const g in genres){
                 const genreName = genres[g]
-                const [gs] = await connection.query(
+                const [gs] = await this.connection.query(
                     `SELECT * FROM genres
                         WHERE name = ?
                     `,
                     [genreName]
                 )
                 const genreId = gs[0].id
-                await connection.query(
+                await this.connection.query(
                     `INSERT INTO books_genres(book_id, genre_id)
                         VALUES (UUID_TO_BIN('${uuid}'), ${genreId})
                     `
                 )
             }
-            await connection.commit()
+            await this.connection.commit()
             const book = await this.getById({id: uuid})
             return book
         }catch(e){
             console.log(e)
-            await connection.rollback()
+            await this.connection.rollback()
             throw new Error('Error creating book')
         }
     }
 
     update = async ({id, input}) => {
-        console.log('**************** updating on sql class')
-        console.log(id)
-        console.log(input)
         const {
             name,
             author,
@@ -135,7 +132,7 @@ export class BookModel {
             SET ${this.getTheSetLine({name, author, description, year})}
             WHERE id = UUID_TO_BIN(?)
             `
-        const [result] = await connection.query(
+        const [result] = await this.connection.query(
             query,
             params
         )
@@ -160,11 +157,16 @@ export class BookModel {
     }
 
     delete = async ({id}) => {
-        await connection.query(
-            `DELETE FROM books
-            WHERE id = ?
-            `,
-            [id]
-        )
+        try{
+            const [result, secondVar] = await this.connection.query(
+                `DELETE FROM books
+                WHERE BIN_TO_UUID(id) = ?
+                `,
+                [id]
+            )
+            return result['affectedRows'] == 1
+        }catch(err){
+            return false
+        }
     }
 }
