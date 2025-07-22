@@ -1,5 +1,5 @@
-import { createApp } from "./app";
-import { BookModel } from "./models/mysql/book";
+import { createApp } from "./app.js";
+import { BookModel } from "./models/mysql/book.js";
 
 createApp({bookModel: new BookModel({
     config: {
