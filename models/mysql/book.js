@@ -8,6 +8,8 @@ export class BookModel {
     }
 
     async init(){
+        console.log('***************** config')
+        console.log(JSON.stringify(this.config))
         this.connection = await mysql.createConnection(this.config)
         await connection.query('SET autocommit = 1');
     }
