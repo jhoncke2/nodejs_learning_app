@@ -1,0 +1,193 @@
+(
+    "Disparando contra DIOS, por qué los nuevos ateos no dan en el blanco",
+    "John C. Lennox",
+    "Una defensa racional de la fe cristiana frente a los argumentos del nuevo ateísmo.",
+    2015
+),
+(
+    "Mero Cristianismo",
+    "C.S. Lewis",
+    "Una explicación accesible y profunda de las bases del cristianismo.",
+    1952
+),
+(
+    "El problema del dolor",
+    "C.S. Lewis",
+    "Reflexión teológica sobre el sufrimiento humano y la bondad de Dios.",
+    1940
+),
+(
+    "El Evangelio según Pablo",
+    "John McArthur",
+    "Explora la teología del apóstol Pablo sobre la gracia y la salvación.",
+    2017
+),
+(
+    "Más que un carpintero",
+    "Josh Macdowell",
+    "Presenta argumentos históricos y lógicos a favor de la divinidad de Jesús.",
+    1977
+),
+(
+    "El caso de CRISTO",
+    "Lee Strobel",
+    "Una investigación periodística sobre la evidencia de la vida y resurrección de Jesús.",
+    1998
+),
+(
+    "Cartas del diablo a su sobrino",
+    "C.S. Lewis",
+    "Una sátira teológica en forma de cartas entre demonios sobre cómo tentar a los humanos.",
+    1942
+),
+(
+    "Blood newspaper minute store",
+    "Isaac Newton",
+    "Challenge speak bring worry field. Important watch travel data today letter.\nGroup over nice long. Beautiful eight tonight yard budget conference sing.",
+    2015
+),
+(
+    "Long appear total prove environmental",
+    "Isaac Newton",
+    "Sound away age usually test agent seven. Campaign material themselves over join education. Beat probably career must rich always.\nWhich organization act have half. Free affect first tend.",
+    1879
+),
+(
+    "Relate crime history TV along",
+    "Isaac Newton",
+    "State shoulder hotel method crime sign. Major long policy spring. Against current because claim lose.\nEvent where item nor property someone. Clearly field program almost final.",
+    1956
+),
+(
+    "Accept free black difficult scientist",
+    "George Orwell",
+    "You human consider strategy yard prevent shoulder. Decade shoulder ten ready. Plan final add information bad. First building thank down popular explain police wall.",
+    1956
+),
+(
+    "Mrs indicate much player",
+    "George Orwell",
+    "They reduce open dog raise control stage. Building court garden expect offer play.\nFinish look culture radio. Either also along light himself onto card. Somebody beyond start writer back great.",
+    1863
+),
+(
+    "Watch field require",
+    "George Orwell",
+    "Air fight choice easy per. Ready style office five raise her late.\nHome interest determine house. Word family large listen. Result instead especially usually why boy.",
+    1888
+),
+(
+    "Red soon nation",
+    "C.S. Lewis",
+    "High doctor religious check.\nCentury talk bar wall reach specific particular. Live bad yourself of woman art which.\nMemory score ten relationship. Trial our often itself animal information nature.",
+    1986
+),
+(
+    "There herself improve",
+    "C.S. Lewis",
+    "Stuff approach war history age. Late attorney onto for sometimes. Win production show city hospital name.",
+    1901
+)
+
+
+
+(
+    (SELECT id FROM books WHERE name = "Disparando contra DIOS, por qué los nuevos ateos no dan en el blanco"),
+    (SELECT id FROM genres WHERE name = "Cristianismo")
+),
+(
+    (SELECT id FROM books WHERE name = "Disparando contra DIOS, por qué los nuevos ateos no dan en el blanco"),
+    (SELECT id FROM genres WHERE name = "ciencia")
+),
+(
+    (SELECT id FROM books WHERE name = "Mero Cristianismo"),
+    (SELECT id FROM genres WHERE name = "Cristianismo")
+),
+(
+    (SELECT id FROM books WHERE name = "Mero Cristianismo"),
+    (SELECT id FROM genres WHERE name = "filosofía")
+),
+(
+    (SELECT id FROM books WHERE name = "El problema del dolor"),
+    (SELECT id FROM genres WHERE name = "Cristianismo")
+),
+(
+    (SELECT id FROM books WHERE name = "El problema del dolor"),
+    (SELECT id FROM genres WHERE name = "filosofía")
+),
+(
+    (SELECT id FROM books WHERE name = "El Evangelio según Pablo"),
+    (SELECT id FROM genres WHERE name = "Cristianismo")
+),
+(
+    (SELECT id FROM books WHERE name = "Más que un carpintero"),
+    (SELECT id FROM genres WHERE name = "Cristianismo")
+),
+(
+    (SELECT id FROM books WHERE name = "Más que un carpintero"),
+    (SELECT id FROM genres WHERE name = "ciencia")
+),
+(
+    (SELECT id FROM books WHERE name = "Más que un carpintero"),
+    (SELECT id FROM genres WHERE name = "filosofía")
+),
+(
+    (SELECT id FROM books WHERE name = "El caso de CRISTO"),
+    (SELECT id FROM genres WHERE name = "Cristianismo")
+),
+(
+    (SELECT id FROM books WHERE name = "El caso de CRISTO"),
+    (SELECT id FROM genres WHERE name = "historia")
+),
+(
+    (SELECT id FROM books WHERE name = "Cartas del diablo a su sobrino"),
+    (SELECT id FROM genres WHERE name = "Cristianismo")
+),
+(
+    (SELECT id FROM books WHERE name = "Cartas del diablo a su sobrino"),
+    (SELECT id FROM genres WHERE name = "novela")
+),
+(
+    (SELECT id FROM books WHERE name = "Blood newspaper minute store"),
+    (SELECT id FROM genres WHERE name = "ciencia")
+),
+(
+    (SELECT id FROM books WHERE name = "Long appear total prove environmental"),
+    (SELECT id FROM genres WHERE name = "ciencia")
+),
+(
+    (SELECT id FROM books WHERE name = "Relate crime history TV along"),
+    (SELECT id FROM genres WHERE name = "novela")
+),
+(
+    (SELECT id FROM books WHERE name = "Accept free black difficult scientist"),
+    (SELECT id FROM genres WHERE name = "ciencia")
+),
+(
+    (SELECT id FROM books WHERE name = "Accept free black difficult scientist"),
+    (SELECT id FROM genres WHERE name = "filosofía")
+),
+(
+    (SELECT id FROM books WHERE name = "Mrs indicate much player"),
+    (SELECT id FROM genres WHERE name = "poesía")
+),
+(
+    (SELECT id FROM books WHERE name = "Watch field require"),
+    (SELECT id FROM genres WHERE name = "filosofía")
+),
+(
+    (SELECT id FROM books WHERE name = "Red soon nation"),
+    (SELECT id FROM genres WHERE name = "política")
+),
+(
+    (SELECT id FROM books WHERE name = "Red soon nation"),
+    (SELECT id FROM genres WHERE name = "filosofía")
+),
+(
+    (SELECT id FROM books WHERE name = "There herself improve"),
+    (SELECT id FROM genres WHERE name = "recetas")
+)
+
+
+
+

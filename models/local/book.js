@@ -1,8 +1,8 @@
-import books from '../books.json' with {type: 'json'}
+import books from '../../books.json' with {type: 'json'}
 import { randomUUID } from 'crypto'
 
 export class BookModel {
-    static getAll = async ({ genre, year }) => {
+    getAll = async ({ genre, year }) => {
         var filteredBooks = books
         if(genre){
             filteredBooks = filteredBooks.filter(
@@ -19,14 +19,14 @@ export class BookModel {
         return filteredBooks
     }
 
-    static async getById ({id}) {
+    getById = async ({id}) => {
         const book = books.find(
             b => b.id == id
         )
         return book
     }
 
-    static async create(input) {
+    create = async ({input}) => {
         const newBook = {
             id: randomUUID(),
             ...input.data
@@ -35,7 +35,7 @@ export class BookModel {
         return newBook
     }
 
-    static async update({ id, input }) {
+    update = async ({ id, input }) => {
         const bookIndex = books.findIndex(
             b => b.id == id
         )
@@ -47,7 +47,7 @@ export class BookModel {
         return books[bookIndex]
     }
 
-    static async delete({ id }) {
+    delete = async ({ id }) => {
         const bookIndex = books.findIndex(
             b => b.id == id
         )

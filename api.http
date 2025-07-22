@@ -1,35 +1,35 @@
 ### Recuperar todos los libros
 GET http://localhost:1234/books
 
-### Recuperar un libro por id
-GET http://localhost:1234/books/65
-
 ### Recuperar todos los libros por género y año
-GET http://localhost:1234/books?genre=NovelA&year=2003
+GET http://localhost:1234/books?genre=ciEncIa&year=2015
+
+### Recuperar un libro por id
+GET http://localhost:1234/books/6da6d5cd-6df0-43a5-a9ef-8e6b2f4774cb
 
 ### Crear un libro
 POST http://localhost:1234/books
 Content-Type: application/json
 
 {
-    "name": "Programación para dummies",
+    "name": "El emperador pobre",
     "author": "Frank Solo",
     "genres": [
-        "Cristianismo",
-        "ciencia",
+        "novela",
+        "recetas",
         "filosofía"
     ],
     "description": "¿Es la ciencia contraria al cristianismo? Pues bien, en este libro se exploran las similitudes que hay entre la existencia de DIOS y la forma en que funciona la mecánica cuántica",
-    "year": 2025
+    "year": 2020
 }
 
 ### Actualizar un libro
-PATCH http://localhost:1234/books/13
+PATCH http://localhost:1234/books/6da6d5cd-6df0-43a5-a9ef-8e6b2f4774cb
 Content-Type: application/json
 
 {
     "year": 2009,
-    "description": "Esta es otra descripción del libro"
+    "description": "Esta es otra descripción del libro actualizada por el método patch"
 }
 
 ### Eliminar un libro
